@@ -1,0 +1,355 @@
+[
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "validate_password",
+        "importPath": "password ",
+        "description": "password ",
+        "isExtraImport": true,
+        "detail": "password ",
+        "documentation": {}
+    },
+    {
+        "label": "find_dates",
+        "importPath": "date",
+        "description": "date",
+        "isExtraImport": true,
+        "detail": "date",
+        "documentation": {}
+    },
+    {
+        "label": "pick_numbers",
+        "importPath": "pick_numbers",
+        "description": "pick_numbers",
+        "isExtraImport": true,
+        "detail": "pick_numbers",
+        "documentation": {}
+    },
+    {
+        "label": "phone_hide",
+        "importPath": "personal_hide",
+        "description": "personal_hide",
+        "isExtraImport": true,
+        "detail": "personal_hide",
+        "documentation": {}
+    },
+    {
+        "label": "email_hide",
+        "importPath": "personal_hide",
+        "description": "personal_hide",
+        "isExtraImport": true,
+        "detail": "personal_hide",
+        "documentation": {}
+    },
+    {
+        "label": "check_dhcp_config",
+        "importPath": "dhcp_config",
+        "description": "dhcp_config",
+        "isExtraImport": true,
+        "detail": "dhcp_config",
+        "documentation": {}
+    },
+    {
+        "label": "transfer_dhcp_config",
+        "importPath": "dhcp_config",
+        "description": "dhcp_config",
+        "isExtraImport": true,
+        "detail": "dhcp_config",
+        "documentation": {}
+    },
+    {
+        "label": "validate_email",
+        "kind": 2,
+        "importPath": "task1.email_final",
+        "description": "task1.email_final",
+        "peekOfCode": "def validate_email(email):\n    \"\"\"\n    This function checks if the given email address is valid or not.\n    :param email: str\n    :return: bool\n    \"\"\"\n    pattern = r'\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b'\n    return bool(re.match(pattern, email))",
+        "detail": "task1.email_final",
+        "documentation": {}
+    },
+    {
+        "label": "validate_email",
+        "kind": 2,
+        "importPath": "task1.email_module",
+        "description": "task1.email_module",
+        "peekOfCode": "def validate_email(email:str) -> bool:\n    \"\"\"\n    This function checks if the given email address is valid or not.\n    :param email: email address\n    :type email: str\n    :return: boolean value of valitation\n    :rtype: bool\n    \"\"\"\n    return bool(re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$', email))",
+        "detail": "task1.email_module",
+        "documentation": {}
+    },
+    {
+        "label": "test_valid_email",
+        "kind": 2,
+        "importPath": "task1.test_email",
+        "description": "task1.test_email",
+        "peekOfCode": "def test_valid_email():\n    assert validate_email(\"jmeno@email.com\") is True\ndef test_invalid_email():\n    assert validate_email(\"neplatna_adresa\") is False\n    assert validate_email(\"chybna@domena\") is False\ndef test_edge_cases():\n    assert validate_email(\"\") is False  # Prázdný řetězec není platná e-mailová adresa\n    assert (\n        validate_email(\"bezZnaku\") is False\n    )  # Žádný znak '@', není platná e-mailová adresa",
+        "detail": "task1.test_email",
+        "documentation": {}
+    },
+    {
+        "label": "test_invalid_email",
+        "kind": 2,
+        "importPath": "task1.test_email",
+        "description": "task1.test_email",
+        "peekOfCode": "def test_invalid_email():\n    assert validate_email(\"neplatna_adresa\") is False\n    assert validate_email(\"chybna@domena\") is False\ndef test_edge_cases():\n    assert validate_email(\"\") is False  # Prázdný řetězec není platná e-mailová adresa\n    assert (\n        validate_email(\"bezZnaku\") is False\n    )  # Žádný znak '@', není platná e-mailová adresa\n    assert validate_email(\"jmeno@domena.\") is False  # Chybějící top-level doména",
+        "detail": "task1.test_email",
+        "documentation": {}
+    },
+    {
+        "label": "test_edge_cases",
+        "kind": 2,
+        "importPath": "task1.test_email",
+        "description": "task1.test_email",
+        "peekOfCode": "def test_edge_cases():\n    assert validate_email(\"\") is False  # Prázdný řetězec není platná e-mailová adresa\n    assert (\n        validate_email(\"bezZnaku\") is False\n    )  # Žádný znak '@', není platná e-mailová adresa\n    assert validate_email(\"jmeno@domena.\") is False  # Chybějící top-level doména",
+        "detail": "task1.test_email",
+        "documentation": {}
+    },
+    {
+        "label": "validate_password",
+        "kind": 2,
+        "importPath": "task2.password",
+        "description": "task2.password",
+        "peekOfCode": "def validate_password(password):\n    return bool(re.match(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,16}$', password))",
+        "detail": "task2.password",
+        "documentation": {}
+    },
+    {
+        "label": "validate_password",
+        "kind": 2,
+        "importPath": "task2.password_final",
+        "description": "task2.password_final",
+        "peekOfCode": "def validate_password(password):\n    pattern = r'^(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,16}$'\n    return bool(re.match(pattern, password))",
+        "detail": "task2.password_final",
+        "documentation": {}
+    },
+    {
+        "label": "test_valid_passwords",
+        "kind": 2,
+        "importPath": "task2.test_password",
+        "description": "task2.test_password",
+        "peekOfCode": "def test_valid_passwords():\n    assert validate_password(\"Abcd123!\") is True\n    assert validate_password(\"StrongP@ss1\") is True\ndef test_invalid_passwords():\n    assert validate_password(\"weakpassword\") is False  # Chybí velké písmeno\n    assert validate_password(\"12345678\") is False  # Chybí speciální znak\n    assert validate_password(\"NoSpecialChar\") is False  # Chybí číslo\n    assert validate_password(\"Short1!\") is False  # Heslo je příliš krátké\n    assert validate_password(\"TooLongPassword123456!\") is False  # Heslo je příliš dlouhé",
+        "detail": "task2.test_password",
+        "documentation": {}
+    },
+    {
+        "label": "test_invalid_passwords",
+        "kind": 2,
+        "importPath": "task2.test_password",
+        "description": "task2.test_password",
+        "peekOfCode": "def test_invalid_passwords():\n    assert validate_password(\"weakpassword\") is False  # Chybí velké písmeno\n    assert validate_password(\"12345678\") is False  # Chybí speciální znak\n    assert validate_password(\"NoSpecialChar\") is False  # Chybí číslo\n    assert validate_password(\"Short1!\") is False  # Heslo je příliš krátké\n    assert validate_password(\"TooLongPassword123456!\") is False  # Heslo je příliš dlouhé",
+        "detail": "task2.test_password",
+        "documentation": {}
+    },
+    {
+        "label": "find_dates",
+        "kind": 2,
+        "importPath": "task3.date",
+        "description": "task3.date",
+        "peekOfCode": "def find_dates(text):\n    pattern = r'\\b\\d{1,2}\\.\\d{1,2}\\.\\d{4}\\b'\n    dates = re.findall(pattern, text)\n    return dates",
+        "detail": "task3.date",
+        "documentation": {}
+    },
+    {
+        "label": "find_dates",
+        "kind": 2,
+        "importPath": "task3.date_final",
+        "description": "task3.date_final",
+        "peekOfCode": "def find_dates(text):\n    dates = re.findall(r'\\d{2}.\\d{2}.\\d{4}', text)\n    return dates",
+        "detail": "task3.date_final",
+        "documentation": {}
+    },
+    {
+        "label": "test_find_dates",
+        "kind": 2,
+        "importPath": "task3.test_date",
+        "description": "task3.test_date",
+        "peekOfCode": "def test_find_dates():\n    text = \"Důležitý termín je 15.02.2023 a další je 20.6.2024.\"\n    expected_dates = [\"15.02.2023\", \"20.6.2024\"]\n    actual_dates = find_dates(text)\n    assert actual_dates == expected_dates, \"Chyba při vyhledávání dat.\"",
+        "detail": "task3.test_date",
+        "documentation": {}
+    },
+    {
+        "label": "pick_numbers",
+        "kind": 2,
+        "importPath": "task4.pick_numbers",
+        "description": "task4.pick_numbers",
+        "peekOfCode": "def pick_numbers(text: str) -> list[int]:\n    numbers = [int(match) for match in re.findall(r'\\d+', text.replace(' ', ''))]\n    return numbers",
+        "detail": "task4.pick_numbers",
+        "documentation": {}
+    },
+    {
+        "label": "test_pick_numbers",
+        "kind": 2,
+        "importPath": "task4.test_numers",
+        "description": "task4.test_numers",
+        "peekOfCode": "def test_pick_numbers():\n    text = \"\"\"10, 22, 18 1 ;11  : 87 ,   12\n19:33  ;   44 55\n123 456\n\"\"\"\n    excepted_numbers = [10, 22, 181, 11, 87, 12, 19, 33, 4455, 123456]\n    assert excepted_numbers == pick_numbers(text)",
+        "detail": "task4.test_numers",
+        "documentation": {}
+    },
+    {
+        "label": "phone_hide",
+        "kind": 2,
+        "importPath": "task5.personal_hide",
+        "description": "task5.personal_hide",
+        "peekOfCode": "def phone_hide(persons):\n    return [re.sub(r\"\\d{3}-\", \"***-\", person) for person in persons]\ndef email_hide(persons: list[str]) -> list[str]:\n    return [re.sub(r\": ([a-z])[a-z.]+([a-z])@[a-z]+([a-z])\", r\": \\1***\\2@***\\3\", person) for person in persons]",
+        "detail": "task5.personal_hide",
+        "documentation": {}
+    },
+    {
+        "label": "email_hide",
+        "kind": 2,
+        "importPath": "task5.personal_hide",
+        "description": "task5.personal_hide",
+        "peekOfCode": "def email_hide(persons: list[str]) -> list[str]:\n    return [re.sub(r\": ([a-z])[a-z.]+([a-z])@[a-z]+([a-z])\", r\": \\1***\\2@***\\3\", person) for person in persons]",
+        "detail": "task5.personal_hide",
+        "documentation": {}
+    },
+    {
+        "label": "test_phone_hide",
+        "kind": 2,
+        "importPath": "task5.test_personal_hide",
+        "description": "task5.test_personal_hide",
+        "peekOfCode": "def test_phone_hide():\n    persons = [\"John: 123-456-7890\", \"Jane: 987-654-3210\", \"Mike: 555-123-4567\"]\n    expected_persons = [\"John: ***-***-7890\", \"Jane: ***-***-3210\",\"Mike: ***-***-4567\", ]\n    print(phone_hide(persons))\n    assert phone_hide(persons) == expected_persons\ndef test_email_hide():\n    persons = [\n        \"Jonatan: jonatan@example.com\",\n        \"Jane: jane.doe@next.cz\",\n        \"Mikie: mikie.smith@tld.org\",",
+        "detail": "task5.test_personal_hide",
+        "documentation": {}
+    },
+    {
+        "label": "test_email_hide",
+        "kind": 2,
+        "importPath": "task5.test_personal_hide",
+        "description": "task5.test_personal_hide",
+        "peekOfCode": "def test_email_hide():\n    persons = [\n        \"Jonatan: jonatan@example.com\",\n        \"Jane: jane.doe@next.cz\",\n        \"Mikie: mikie.smith@tld.org\",\n    ]\n    expected_persons = [\n        \"Jonatan: j***n@***e.com\",\n        \"Jane: j***e@***t.cz\",\n        \"Mikie: m***h@***d.org\",",
+        "detail": "task5.test_personal_hide",
+        "documentation": {}
+    },
+    {
+        "label": "check_dhcp_config",
+        "kind": 2,
+        "importPath": "task6.dhcp_config",
+        "description": "task6.dhcp_config",
+        "peekOfCode": "def check_dhcp_config(line: str) -> bool:\n    return bool(re.match(r\"\\s*([a-z]*\\.[a-z]*\\.[a-z]*\\s*ha=[0-9a-fA-F]{12}:ip=[\\d]+\\.[\\d]+\\.[\\d]+\\.[\\d]+:)\", line) )\ndef transfer_dhcp_config(text: str) -> str:\n   return re.sub(\n        r\"([a-z]*\\.[a-z]*\\.[a-z]*)\\s*ha=([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2}):ip=(\\d+\\.\\d+\\.\\d+\\.\\d+):\",r\"host \\1 {\\n  link address \\2:\\3:\\4:\\5:\\6:\\7;\\n  fix  address \\8;\\n}\", text)",
+        "detail": "task6.dhcp_config",
+        "documentation": {}
+    },
+    {
+        "label": "transfer_dhcp_config",
+        "kind": 2,
+        "importPath": "task6.dhcp_config",
+        "description": "task6.dhcp_config",
+        "peekOfCode": "def transfer_dhcp_config(text: str) -> str:\n   return re.sub(\n        r\"([a-z]*\\.[a-z]*\\.[a-z]*)\\s*ha=([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2}):ip=(\\d+\\.\\d+\\.\\d+\\.\\d+):\",r\"host \\1 {\\n  link address \\2:\\3:\\4:\\5:\\6:\\7;\\n  fix  address \\8;\\n}\", text)",
+        "detail": "task6.dhcp_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_check_dhcp_config",
+        "kind": 2,
+        "importPath": "task6.test_dhcp_config",
+        "description": "task6.test_dhcp_config",
+        "peekOfCode": "def test_check_dhcp_config():\n    assert check_dhcp_config(\"cosi.kdesi.cz ha=0040389A5B60:ip=1.2.3.4:\") is True\n    assert check_dhcp_config(\"cosi.kdesi.cz ha=ff4b389a5b60:ip=1.2.3.4:\") is True\n    assert (\n        check_dhcp_config(\n            \"   cosi.kdesi.cz      ha=ff4b389a5b60:ip=1.2.3.4:           \"\n        )\n        is True\n    )\n    assert check_dhcp_config(\"cosikdesicz   ha=0040389A5B60:ip=1.2.3.4:\") is False",
+        "detail": "task6.test_dhcp_config",
+        "documentation": {}
+    },
+    {
+        "label": "new_format_check",
+        "kind": 2,
+        "importPath": "task6.test_dhcp_config",
+        "description": "task6.test_dhcp_config",
+        "peekOfCode": "def new_format_check(text: str) -> bool:\n    regular = re.compile(\n        r\"\"\"\n\\s*[\\w\\.]+\\s+\\{                                           # header\n\\s*link\\ +address\\ +([\\dABCDEF]{2}:){5}[\\dABCDEF]{2};     # link address\n\\s*fix\\ +address\\ +                                       # fix address\n(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\.){3}  # start IPv4\n(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]);  # IP    # end IPv4\n\\s*\\}                                                     # footer\n    \"\"\",",
+        "detail": "task6.test_dhcp_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_transfer_dhcp_config",
+        "kind": 2,
+        "importPath": "task6.test_dhcp_config",
+        "description": "task6.test_dhcp_config",
+        "peekOfCode": "def test_transfer_dhcp_config():\n    input = \"cosi.kdesi.cz ha=0040389a5b60:ip=192.51.38.244:\"\n    output = \"\"\"host cosi.kdesi.cz {\n  link address 00:40:38:9a:5b:60;\n  fix  address 192.51.38.244;\n}\"\"\"\n    assert transfer_dhcp_config(input) == output\n    assert new_format_check(transfer_dhcp_config(input)) is True\nif __name__ == \"__main__\":\n    test_transfer_dhcp_config()",
+        "detail": "task6.test_dhcp_config",
+        "documentation": {}
+    },
+    {
+        "label": "validate_ico",
+        "kind": 2,
+        "importPath": "examples",
+        "description": "examples",
+        "peekOfCode": "def validate_ico(ico):\n    return bool(re.match(r'^\\d{8}$', ico))\nvalidate_ico(\"12345678\")  # True\nvalidate_ico(\"1234567\")  # False\nvalidate_ico(\"123456789\")  # False\nvalidate_ico(\"1234567a\")  # False",
+        "detail": "examples",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 5,
+        "importPath": "examples",
+        "description": "examples",
+        "peekOfCode": "text = \"Včera bylo 25 stupňů Celsia a dnes je 30 stupňů Celsia.\"\nnumbers = re.findall(r'\\b\\d+\\b', text)\nprint(\"Nalezená čísla:\", numbers)\ntext = \"Python je skvělý jazyk. Python je mocný. Python je oblíbený.\"\nmodified_text = re.sub(r'Python', 'JavaScript', text)\nprint(\"Modifikovaný text:\", modified_text)\ntext = \"Toto je příklad použití regulárních výrazů v Pythonu.\"\nwords = re.findall(r'\\b\\w+\\b', text)\nprint(\"Seznam slov:\", words)\ntext = \"Navštivte náš web na adrese https://www.example.com\"",
+        "detail": "examples",
+        "documentation": {}
+    },
+    {
+        "label": "numbers",
+        "kind": 5,
+        "importPath": "examples",
+        "description": "examples",
+        "peekOfCode": "numbers = re.findall(r'\\b\\d+\\b', text)\nprint(\"Nalezená čísla:\", numbers)\ntext = \"Python je skvělý jazyk. Python je mocný. Python je oblíbený.\"\nmodified_text = re.sub(r'Python', 'JavaScript', text)\nprint(\"Modifikovaný text:\", modified_text)\ntext = \"Toto je příklad použití regulárních výrazů v Pythonu.\"\nwords = re.findall(r'\\b\\w+\\b', text)\nprint(\"Seznam slov:\", words)\ntext = \"Navštivte náš web na adrese https://www.example.com\"\nurls = re.findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\\\(\\\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)",
+        "detail": "examples",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 5,
+        "importPath": "examples",
+        "description": "examples",
+        "peekOfCode": "text = \"Python je skvělý jazyk. Python je mocný. Python je oblíbený.\"\nmodified_text = re.sub(r'Python', 'JavaScript', text)\nprint(\"Modifikovaný text:\", modified_text)\ntext = \"Toto je příklad použití regulárních výrazů v Pythonu.\"\nwords = re.findall(r'\\b\\w+\\b', text)\nprint(\"Seznam slov:\", words)\ntext = \"Navštivte náš web na adrese https://www.example.com\"\nurls = re.findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\\\(\\\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)\nprint(\"Nalezené URL:\", urls)\ndef validate_ico(ico):",
+        "detail": "examples",
+        "documentation": {}
+    },
+    {
+        "label": "modified_text",
+        "kind": 5,
+        "importPath": "examples",
+        "description": "examples",
+        "peekOfCode": "modified_text = re.sub(r'Python', 'JavaScript', text)\nprint(\"Modifikovaný text:\", modified_text)\ntext = \"Toto je příklad použití regulárních výrazů v Pythonu.\"\nwords = re.findall(r'\\b\\w+\\b', text)\nprint(\"Seznam slov:\", words)\ntext = \"Navštivte náš web na adrese https://www.example.com\"\nurls = re.findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\\\(\\\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)\nprint(\"Nalezené URL:\", urls)\ndef validate_ico(ico):\n    return bool(re.match(r'^\\d{8}$', ico))",
+        "detail": "examples",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 5,
+        "importPath": "examples",
+        "description": "examples",
+        "peekOfCode": "text = \"Toto je příklad použití regulárních výrazů v Pythonu.\"\nwords = re.findall(r'\\b\\w+\\b', text)\nprint(\"Seznam slov:\", words)\ntext = \"Navštivte náš web na adrese https://www.example.com\"\nurls = re.findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\\\(\\\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)\nprint(\"Nalezené URL:\", urls)\ndef validate_ico(ico):\n    return bool(re.match(r'^\\d{8}$', ico))\nvalidate_ico(\"12345678\")  # True\nvalidate_ico(\"1234567\")  # False",
+        "detail": "examples",
+        "documentation": {}
+    },
+    {
+        "label": "words",
+        "kind": 5,
+        "importPath": "examples",
+        "description": "examples",
+        "peekOfCode": "words = re.findall(r'\\b\\w+\\b', text)\nprint(\"Seznam slov:\", words)\ntext = \"Navštivte náš web na adrese https://www.example.com\"\nurls = re.findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\\\(\\\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)\nprint(\"Nalezené URL:\", urls)\ndef validate_ico(ico):\n    return bool(re.match(r'^\\d{8}$', ico))\nvalidate_ico(\"12345678\")  # True\nvalidate_ico(\"1234567\")  # False\nvalidate_ico(\"123456789\")  # False",
+        "detail": "examples",
+        "documentation": {}
+    },
+    {
+        "label": "text",
+        "kind": 5,
+        "importPath": "examples",
+        "description": "examples",
+        "peekOfCode": "text = \"Navštivte náš web na adrese https://www.example.com\"\nurls = re.findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\\\(\\\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)\nprint(\"Nalezené URL:\", urls)\ndef validate_ico(ico):\n    return bool(re.match(r'^\\d{8}$', ico))\nvalidate_ico(\"12345678\")  # True\nvalidate_ico(\"1234567\")  # False\nvalidate_ico(\"123456789\")  # False\nvalidate_ico(\"1234567a\")  # False",
+        "detail": "examples",
+        "documentation": {}
+    },
+    {
+        "label": "urls",
+        "kind": 5,
+        "importPath": "examples",
+        "description": "examples",
+        "peekOfCode": "urls = re.findall(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\\\(\\\\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)\nprint(\"Nalezené URL:\", urls)\ndef validate_ico(ico):\n    return bool(re.match(r'^\\d{8}$', ico))\nvalidate_ico(\"12345678\")  # True\nvalidate_ico(\"1234567\")  # False\nvalidate_ico(\"123456789\")  # False\nvalidate_ico(\"1234567a\")  # False",
+        "detail": "examples",
+        "documentation": {}
+    }
+]

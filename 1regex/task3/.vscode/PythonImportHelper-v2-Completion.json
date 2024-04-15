@@ -1,0 +1,46 @@
+[
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "find_dates",
+        "importPath": "date",
+        "description": "date",
+        "isExtraImport": true,
+        "detail": "date",
+        "documentation": {}
+    },
+    {
+        "label": "find_dates",
+        "kind": 2,
+        "importPath": "date",
+        "description": "date",
+        "peekOfCode": "def find_dates(text):\n    pattern = r'\\b\\d{1,2}\\.\\d{1,2}\\.\\d{4}\\b'\n    dates = re.findall(pattern, text)\n    return dates",
+        "detail": "date",
+        "documentation": {}
+    },
+    {
+        "label": "find_dates",
+        "kind": 2,
+        "importPath": "date_final",
+        "description": "date_final",
+        "peekOfCode": "def find_dates(text):\n    dates = re.findall(r'\\d{2}.\\d{2}.\\d{4}', text)\n    return dates",
+        "detail": "date_final",
+        "documentation": {}
+    },
+    {
+        "label": "test_find_dates",
+        "kind": 2,
+        "importPath": "test_date",
+        "description": "test_date",
+        "peekOfCode": "def test_find_dates():\n    text = \"Důležitý termín je 15.02.2023 a další je 20.6.2024.\"\n    expected_dates = [\"15.02.2023\", \"20.6.2024\"]\n    actual_dates = find_dates(text)\n    assert actual_dates == expected_dates, \"Chyba při vyhledávání dat.\"",
+        "detail": "test_date",
+        "documentation": {}
+    }
+]

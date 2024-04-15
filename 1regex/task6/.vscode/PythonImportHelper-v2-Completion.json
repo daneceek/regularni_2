@@ -1,0 +1,72 @@
+[
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "check_dhcp_config",
+        "importPath": "dhcp_config",
+        "description": "dhcp_config",
+        "isExtraImport": true,
+        "detail": "dhcp_config",
+        "documentation": {}
+    },
+    {
+        "label": "transfer_dhcp_config",
+        "importPath": "dhcp_config",
+        "description": "dhcp_config",
+        "isExtraImport": true,
+        "detail": "dhcp_config",
+        "documentation": {}
+    },
+    {
+        "label": "check_dhcp_config",
+        "kind": 2,
+        "importPath": "dhcp_config",
+        "description": "dhcp_config",
+        "peekOfCode": "def check_dhcp_config(line: str) -> bool:\n    return bool(re.match(r\"\\s*([a-z]*\\.[a-z]*\\.[a-z]*\\s*ha=[0-9a-fA-F]{12}:ip=[\\d]+\\.[\\d]+\\.[\\d]+\\.[\\d]+:)\", line) )\ndef transfer_dhcp_config(text: str) -> str:\n   return re.sub(\n        r\"([a-z]*\\.[a-z]*\\.[a-z]*)\\s*ha=([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2}):ip=(\\d+\\.\\d+\\.\\d+\\.\\d+):\",r\"host \\1 {\\n  link address \\2:\\3:\\4:\\5:\\6:\\7;\\n  fix  address \\8;\\n}\", text)",
+        "detail": "dhcp_config",
+        "documentation": {}
+    },
+    {
+        "label": "transfer_dhcp_config",
+        "kind": 2,
+        "importPath": "dhcp_config",
+        "description": "dhcp_config",
+        "peekOfCode": "def transfer_dhcp_config(text: str) -> str:\n   return re.sub(\n        r\"([a-z]*\\.[a-z]*\\.[a-z]*)\\s*ha=([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2})([0-9a-fA-F]{2}):ip=(\\d+\\.\\d+\\.\\d+\\.\\d+):\",r\"host \\1 {\\n  link address \\2:\\3:\\4:\\5:\\6:\\7;\\n  fix  address \\8;\\n}\", text)",
+        "detail": "dhcp_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_check_dhcp_config",
+        "kind": 2,
+        "importPath": "test_dhcp_config",
+        "description": "test_dhcp_config",
+        "peekOfCode": "def test_check_dhcp_config():\n    assert check_dhcp_config(\"cosi.kdesi.cz ha=0040389A5B60:ip=1.2.3.4:\") is True\n    assert check_dhcp_config(\"cosi.kdesi.cz ha=ff4b389a5b60:ip=1.2.3.4:\") is True\n    assert (\n        check_dhcp_config(\n            \"   cosi.kdesi.cz      ha=ff4b389a5b60:ip=1.2.3.4:           \"\n        )\n        is True\n    )\n    assert check_dhcp_config(\"cosikdesicz   ha=0040389A5B60:ip=1.2.3.4:\") is False",
+        "detail": "test_dhcp_config",
+        "documentation": {}
+    },
+    {
+        "label": "new_format_check",
+        "kind": 2,
+        "importPath": "test_dhcp_config",
+        "description": "test_dhcp_config",
+        "peekOfCode": "def new_format_check(text: str) -> bool:\n    regular = re.compile(\n        r\"\"\"\n\\s*[\\w\\.]+\\s+\\{                                           # header\n\\s*link\\ +address\\ +([\\dABCDEF]{2}:){5}[\\dABCDEF]{2};     # link address\n\\s*fix\\ +address\\ +                                       # fix address\n(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\\.){3}  # start IPv4\n(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9]);  # IP    # end IPv4\n\\s*\\}                                                     # footer\n    \"\"\",",
+        "detail": "test_dhcp_config",
+        "documentation": {}
+    },
+    {
+        "label": "test_transfer_dhcp_config",
+        "kind": 2,
+        "importPath": "test_dhcp_config",
+        "description": "test_dhcp_config",
+        "peekOfCode": "def test_transfer_dhcp_config():\n    input = \"cosi.kdesi.cz ha=0040389a5b60:ip=192.51.38.244:\"\n    output = \"\"\"host cosi.kdesi.cz {\n  link address 00:40:38:9a:5b:60;\n  fix  address 192.51.38.244;\n}\"\"\"\n    assert transfer_dhcp_config(input) == output\n    assert new_format_check(transfer_dhcp_config(input)) is True\nif __name__ == \"__main__\":\n    test_transfer_dhcp_config()",
+        "detail": "test_dhcp_config",
+        "documentation": {}
+    }
+]

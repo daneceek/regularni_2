@@ -1,3 +1,4 @@
+import re
 def validate_email(email:str) -> bool:
     """
     This function checks if the given email address is valid or not.
@@ -7,4 +8,5 @@ def validate_email(email:str) -> bool:
     :return: boolean value of valitation
     :rtype: bool
     """
-    pass
+    
+    return bool(re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', email))

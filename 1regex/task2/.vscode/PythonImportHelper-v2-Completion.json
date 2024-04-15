@@ -1,0 +1,55 @@
+[
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "validate_password",
+        "importPath": "password ",
+        "description": "password ",
+        "isExtraImport": true,
+        "detail": "password ",
+        "documentation": {}
+    },
+    {
+        "label": "validate_password",
+        "kind": 2,
+        "importPath": "password",
+        "description": "password",
+        "peekOfCode": "def validate_password(password):\n    return bool(re.match(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,16}$', password))",
+        "detail": "password",
+        "documentation": {}
+    },
+    {
+        "label": "validate_password",
+        "kind": 2,
+        "importPath": "password_final",
+        "description": "password_final",
+        "peekOfCode": "def validate_password(password):\n    pattern = r'^(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,16}$'\n    return bool(re.match(pattern, password))",
+        "detail": "password_final",
+        "documentation": {}
+    },
+    {
+        "label": "test_valid_passwords",
+        "kind": 2,
+        "importPath": "test_password",
+        "description": "test_password",
+        "peekOfCode": "def test_valid_passwords():\n    assert validate_password(\"Abcd123!\") is True\n    assert validate_password(\"StrongP@ss1\") is True\ndef test_invalid_passwords():\n    assert validate_password(\"weakpassword\") is False  # Chybí velké písmeno\n    assert validate_password(\"12345678\") is False  # Chybí speciální znak\n    assert validate_password(\"NoSpecialChar\") is False  # Chybí číslo\n    assert validate_password(\"Short1!\") is False  # Heslo je příliš krátké\n    assert validate_password(\"TooLongPassword123456!\") is False  # Heslo je příliš dlouhé",
+        "detail": "test_password",
+        "documentation": {}
+    },
+    {
+        "label": "test_invalid_passwords",
+        "kind": 2,
+        "importPath": "test_password",
+        "description": "test_password",
+        "peekOfCode": "def test_invalid_passwords():\n    assert validate_password(\"weakpassword\") is False  # Chybí velké písmeno\n    assert validate_password(\"12345678\") is False  # Chybí speciální znak\n    assert validate_password(\"NoSpecialChar\") is False  # Chybí číslo\n    assert validate_password(\"Short1!\") is False  # Heslo je příliš krátké\n    assert validate_password(\"TooLongPassword123456!\") is False  # Heslo je příliš dlouhé",
+        "detail": "test_password",
+        "documentation": {}
+    }
+]

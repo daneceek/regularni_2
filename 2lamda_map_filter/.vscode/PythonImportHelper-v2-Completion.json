@@ -1,0 +1,142 @@
+[
+    {
+        "label": "transform_words",
+        "importPath": "task1",
+        "description": "task1",
+        "isExtraImport": true,
+        "detail": "task1",
+        "documentation": {}
+    },
+    {
+        "label": "filter_numbers_greater_than_five",
+        "importPath": "task2",
+        "description": "task2",
+        "isExtraImport": true,
+        "detail": "task2",
+        "documentation": {}
+    },
+    {
+        "label": "add_initials",
+        "importPath": "task3",
+        "description": "task3",
+        "isExtraImport": true,
+        "detail": "task3",
+        "documentation": {}
+    },
+    {
+        "label": "complex_word_filter",
+        "importPath": "task4",
+        "description": "task4",
+        "isExtraImport": true,
+        "detail": "task4",
+        "documentation": {}
+    },
+    {
+        "label": "transform_words",
+        "kind": 2,
+        "importPath": "task1.task1",
+        "description": "task1.task1",
+        "peekOfCode": "def transform_words(words: list) -> list:\n    # def transormation(word: str) -> str:\n    #     return word.upper() + str(len(word))\n    # transormation = lambda w: w.upper() + str(len(w))\n    return list(map(lambda w: w.upper() + str(len(w)), words))",
+        "detail": "task1.task1",
+        "documentation": {}
+    },
+    {
+        "label": "transform_words",
+        "kind": 2,
+        "importPath": "task1.task1_final",
+        "description": "task1.task1_final",
+        "peekOfCode": "def transform_words(words):\n    transform_word = lambda word: word.upper() + str(len(word))\n    transformed_words = map(transform_word, words)\n    return list(transformed_words)",
+        "detail": "task1.task1_final",
+        "documentation": {}
+    },
+    {
+        "label": "test_transform_words",
+        "kind": 2,
+        "importPath": "task1.test_task1",
+        "description": "task1.test_task1",
+        "peekOfCode": "def test_transform_words():\n    words = [\"python\", \"map\", \"advanced\", \"example\"]\n    expected_result = ['PYTHON6', 'MAP3', 'ADVANCED8', 'EXAMPLE7']\n    result = transform_words(words)\n    assert result == expected_result, f\"Očekáváno: {expected_result}, Obdrženo: {result}\"",
+        "detail": "task1.test_task1",
+        "documentation": {}
+    },
+    {
+        "label": "filter_numbers_greater_than_five",
+        "kind": 2,
+        "importPath": "task2.task2",
+        "description": "task2.task2",
+        "peekOfCode": "def filter_numbers_greater_than_five(numbers: list[int]) -> list[int]:\n    return list(filter(lambda n: n > 5, numbers))",
+        "detail": "task2.task2",
+        "documentation": {}
+    },
+    {
+        "label": "filter_numbers_greater_than_five",
+        "kind": 2,
+        "importPath": "task2.task2_final",
+        "description": "task2.task2_final",
+        "peekOfCode": "def filter_numbers_greater_than_five(numbers):\n    filter_condition = lambda x: x > 5\n    filtered_numbers = filter(filter_condition, numbers)\n    return list(filtered_numbers)",
+        "detail": "task2.task2_final",
+        "documentation": {}
+    },
+    {
+        "label": "test_filter_numbers_greater_than_five",
+        "kind": 2,
+        "importPath": "task2.test_task2",
+        "description": "task2.test_task2",
+        "peekOfCode": "def test_filter_numbers_greater_than_five():\n    numbers = [3, 8, 1, 6, 4, 7, 2, 9]\n    expected_result = [8, 6, 7, 9]\n    # Zavolejte funkci filter_numbers_greater_than_five\n    result = filter_numbers_greater_than_five(numbers)\n    # Porovnejte výsledek s očekávaným výsledkem\n    assert result == expected_result, f\"Očekáváno: {expected_result}, Obdrženo: {result}\"",
+        "detail": "task2.test_task2",
+        "documentation": {}
+    },
+    {
+        "label": "add_initials",
+        "kind": 2,
+        "importPath": "task3.task3",
+        "description": "task3.task3",
+        "peekOfCode": "def add_initials(people: list[dict]) -> list[dict]:\n    def add_initials(p):\n        p[\"initials\"] = p[\"name\"][0] + p[\"surname\"][0]\n        return p\n    return list(\n        map(lambda p: {**p, \"initials\": p[\"name\"][0] + p[\"surname\"][0]}, people)\n    )",
+        "detail": "task3.task3",
+        "documentation": {}
+    },
+    {
+        "label": "add_initials",
+        "kind": 2,
+        "importPath": "task3.task3_final",
+        "description": "task3.task3_final",
+        "peekOfCode": "def add_initials(people):\n    add_initials_to_person = lambda person: {**person, \"initials\": person[\"name\"][:1] + person[\"surname\"][:1]}\n    people_with_initials = map(add_initials_to_person, people)\n    return list(people_with_initials)",
+        "detail": "task3.task3_final",
+        "documentation": {}
+    },
+    {
+        "label": "test_add_initials",
+        "kind": 2,
+        "importPath": "task3.test_task3",
+        "description": "task3.test_task3",
+        "peekOfCode": "def test_add_initials():\n    # Příklad s inicialy\n    people = [\n        {\"name\": \"John\", \"surname\": \"Doe\"},\n        {\"name\": \"Alice\", \"surname\": \"Smith\"},\n        {\"name\": \"Bob\", \"surname\": \"Johnson\"},\n    ]\n    expected_result = [\n        {\"name\": \"John\", \"surname\": \"Doe\", \"initials\": \"JD\"},\n        {\"name\": \"Alice\", \"surname\": \"Smith\", \"initials\": \"AS\"},",
+        "detail": "task3.test_task3",
+        "documentation": {}
+    },
+    {
+        "label": "complex_word_filter",
+        "kind": 2,
+        "importPath": "task4.task4",
+        "description": "task4.task4",
+        "peekOfCode": "def complex_word_filter(words: list[str], min_length: int) -> list[str]:\n    return list(\n        map(\n            lambda w: w.upper()\n            + str(\n                w.count(\"a\") + w.count(\"e\") + w.count(\"i\") + w.count(\"o\") + w.count(\"u\")\n            ),\n            filter(lambda w: len(w) > min_length, words),\n        )\n    )",
+        "detail": "task4.task4",
+        "documentation": {}
+    },
+    {
+        "label": "complex_word_filter",
+        "kind": 2,
+        "importPath": "task4.task4_final",
+        "description": "task4.task4_final",
+        "peekOfCode": "def complex_word_filter(words, min_length):\n    filter_by_length = lambda word: len(word) > min_length\n    transform_word = lambda word: word.upper() + str(\n        word.lower().count('a') + word.lower().count('e') + word.lower().count('i') + word.lower().count(\n            'o') + word.lower().count('u'))\n    filtered_and_transformed_words = map(transform_word, filter(filter_by_length, words))\n    return list(filtered_and_transformed_words)",
+        "detail": "task4.task4_final",
+        "documentation": {}
+    },
+    {
+        "label": "test_complex_word_filter",
+        "kind": 2,
+        "importPath": "task4.test_task4",
+        "description": "task4.test_task4",
+        "peekOfCode": "def test_complex_word_filter():\n    # Test na základě předchozího příkladu\n    words = [\"python\", \"map\", \"advanced\", \"example\"]\n    expected_result = ['PYTHON1', 'ADVANCED3', 'EXAMPLE3']\n    # Zavolejte funkci complex_word_filter\n    result = complex_word_filter(words, 5)\n    # Porovnejte výsledek s očekávaným výsledkem\n    assert result == expected_result, f\"Očekáv3áno: {expected_result}, Obdrženo: {result}\"",
+        "detail": "task4.test_task4",
+        "documentation": {}
+    }
+]

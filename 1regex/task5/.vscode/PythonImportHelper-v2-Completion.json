@@ -1,0 +1,72 @@
+[
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "phone_hide",
+        "importPath": "personal_hide",
+        "description": "personal_hide",
+        "isExtraImport": true,
+        "detail": "personal_hide",
+        "documentation": {}
+    },
+    {
+        "label": "email_hide",
+        "importPath": "personal_hide",
+        "description": "personal_hide",
+        "isExtraImport": true,
+        "detail": "personal_hide",
+        "documentation": {}
+    },
+    {
+        "label": "phone_hide",
+        "kind": 2,
+        "importPath": "personal_hide",
+        "description": "personal_hide",
+        "peekOfCode": "def phone_hide(persons):\n    return [hide_phone(person) for person in persons]\ndef hide_phone(person):\n    name, phone = person.split(': ')\n    hidden_phone = re.sub(r'\\d', '*', phone, count=6)\n    return f\"{name}: {hidden_phone}\"\ndef email_hide(persons: list[str]) -> list[str]:\n    return [re.sub(r\": ([a-z])[a-z.]+([a-z])@[a-z]+([a-z])\", r\": \\1***\\2@***\\3\", person) for person in persons]",
+        "detail": "personal_hide",
+        "documentation": {}
+    },
+    {
+        "label": "hide_phone",
+        "kind": 2,
+        "importPath": "personal_hide",
+        "description": "personal_hide",
+        "peekOfCode": "def hide_phone(person):\n    name, phone = person.split(': ')\n    hidden_phone = re.sub(r'\\d', '*', phone, count=6)\n    return f\"{name}: {hidden_phone}\"\ndef email_hide(persons: list[str]) -> list[str]:\n    return [re.sub(r\": ([a-z])[a-z.]+([a-z])@[a-z]+([a-z])\", r\": \\1***\\2@***\\3\", person) for person in persons]",
+        "detail": "personal_hide",
+        "documentation": {}
+    },
+    {
+        "label": "email_hide",
+        "kind": 2,
+        "importPath": "personal_hide",
+        "description": "personal_hide",
+        "peekOfCode": "def email_hide(persons: list[str]) -> list[str]:\n    return [re.sub(r\": ([a-z])[a-z.]+([a-z])@[a-z]+([a-z])\", r\": \\1***\\2@***\\3\", person) for person in persons]",
+        "detail": "personal_hide",
+        "documentation": {}
+    },
+    {
+        "label": "test_phone_hide",
+        "kind": 2,
+        "importPath": "test_personal_hide",
+        "description": "test_personal_hide",
+        "peekOfCode": "def test_phone_hide():\n    persons = [\"John: 123-456-7890\", \"Jane: 987-654-3210\", \"Mike: 555-123-4567\"]\n    expected_persons = [\"John: ***-***-7890\", \"Jane: ***-***-3210\",\"Mike: ***-***-4567\", ]\n    print(phone_hide(persons))\n    assert phone_hide(persons) == expected_persons\ndef test_email_hide():\n    persons = [\n        \"Jonatan: jonatan@example.com\",\n        \"Jane: jane.doe@next.cz\",\n        \"Mikie: mikie.smith@tld.org\",",
+        "detail": "test_personal_hide",
+        "documentation": {}
+    },
+    {
+        "label": "test_email_hide",
+        "kind": 2,
+        "importPath": "test_personal_hide",
+        "description": "test_personal_hide",
+        "peekOfCode": "def test_email_hide():\n    persons = [\n        \"Jonatan: jonatan@example.com\",\n        \"Jane: jane.doe@next.cz\",\n        \"Mikie: mikie.smith@tld.org\",\n    ]\n    expected_persons = [\n        \"Jonatan: j***n@***e.com\",\n        \"Jane: j***e@***t.cz\",\n        \"Mikie: m***h@***d.org\",",
+        "detail": "test_personal_hide",
+        "documentation": {}
+    }
+]

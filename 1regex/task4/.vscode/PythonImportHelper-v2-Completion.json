@@ -1,0 +1,37 @@
+[
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "pick_numbers",
+        "importPath": "pick_numbers",
+        "description": "pick_numbers",
+        "isExtraImport": true,
+        "detail": "pick_numbers",
+        "documentation": {}
+    },
+    {
+        "label": "pick_numbers",
+        "kind": 2,
+        "importPath": "pick_numbers",
+        "description": "pick_numbers",
+        "peekOfCode": "def pick_numbers(text):\n    numbers = [int(match) for match in re.findall(r'\\d+', text.replace(' ', ''))]\n    return numbers",
+        "detail": "pick_numbers",
+        "documentation": {}
+    },
+    {
+        "label": "test_pick_numbers",
+        "kind": 2,
+        "importPath": "test_numers",
+        "description": "test_numers",
+        "peekOfCode": "def test_pick_numbers():\n    text = \"\"\"10, 22, 18 1 ;11  : 87 ,   12\n19:33  ;   44 55\n123 456\n\"\"\"\n    excepted_numbers = [10, 22, 181, 11, 87, 12, 19, 33, 4455, 123456]\n    assert excepted_numbers == pick_numbers(text)",
+        "detail": "test_numers",
+        "documentation": {}
+    }
+]

@@ -1,0 +1,56 @@
+[
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "validate_email",
+        "kind": 2,
+        "importPath": "email_final",
+        "description": "email_final",
+        "peekOfCode": "def validate_email(email):\n    \"\"\"\n    This function checks if the given email address is valid or not.\n    :param email: str\n    :return: bool\n    \"\"\"\n    pattern = r'\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b'\n    return bool(re.match(pattern, email))",
+        "detail": "email_final",
+        "documentation": {}
+    },
+    {
+        "label": "validate_email",
+        "kind": 2,
+        "importPath": "email_module",
+        "description": "email_module",
+        "peekOfCode": "def validate_email(email:str) -> bool:\n    \"\"\"\n    This function checks if the given email address is valid or not.\n    :param email: email address\n    :type email: str\n    :return: boolean value of valitation\n    :rtype: bool\n    \"\"\"\n    return bool(re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$', email))",
+        "detail": "email_module",
+        "documentation": {}
+    },
+    {
+        "label": "test_valid_email",
+        "kind": 2,
+        "importPath": "test_email",
+        "description": "test_email",
+        "peekOfCode": "def test_valid_email():\n    assert validate_email(\"jmeno@email.com\") is True\ndef test_invalid_email():\n    assert validate_email(\"neplatna_adresa\") is False\n    assert validate_email(\"chybna@domena\") is False\ndef test_edge_cases():\n    assert validate_email(\"\") is False  # Prázdný řetězec není platná e-mailová adresa\n    assert (\n        validate_email(\"bezZnaku\") is False\n    )  # Žádný znak '@', není platná e-mailová adresa",
+        "detail": "test_email",
+        "documentation": {}
+    },
+    {
+        "label": "test_invalid_email",
+        "kind": 2,
+        "importPath": "test_email",
+        "description": "test_email",
+        "peekOfCode": "def test_invalid_email():\n    assert validate_email(\"neplatna_adresa\") is False\n    assert validate_email(\"chybna@domena\") is False\ndef test_edge_cases():\n    assert validate_email(\"\") is False  # Prázdný řetězec není platná e-mailová adresa\n    assert (\n        validate_email(\"bezZnaku\") is False\n    )  # Žádný znak '@', není platná e-mailová adresa\n    assert validate_email(\"jmeno@domena.\") is False  # Chybějící top-level doména",
+        "detail": "test_email",
+        "documentation": {}
+    },
+    {
+        "label": "test_edge_cases",
+        "kind": 2,
+        "importPath": "test_email",
+        "description": "test_email",
+        "peekOfCode": "def test_edge_cases():\n    assert validate_email(\"\") is False  # Prázdný řetězec není platná e-mailová adresa\n    assert (\n        validate_email(\"bezZnaku\") is False\n    )  # Žádný znak '@', není platná e-mailová adresa\n    assert validate_email(\"jmeno@domena.\") is False  # Chybějící top-level doména",
+        "detail": "test_email",
+        "documentation": {}
+    }
+]
